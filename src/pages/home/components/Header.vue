@@ -11,12 +11,14 @@
       </span>
       输入城市景点游玩主题
     </div>
-    <div class="header-right">
+    <router-link to="/city">
+      <div class="header-right">
       {{this.city}}
       <span class="iconfont arrow-icon">
         &#xe64a;
       </span>
     </div>
+    </router-link>
   </div>
 </template>
 
@@ -56,6 +58,7 @@ export default {
       width:1.24rem
       float:right
       text-align:center
+      color:#fff
       .arrow-icon
         margin-left:-.04rem
         font-size:.24rem
