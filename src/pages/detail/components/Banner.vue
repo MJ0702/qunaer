@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_600x330_4ae7abf5.jpg" alt="">
+      <img class="banner-img" :src="bannerImg" alt="">
       <div class="banner-info">
-        <div class="banner-title">深圳小梅沙海洋世界</div>
-        <div class="banner-number"><span class="iconfont banner-icon">&#xe691;</span>39</div>
+        <div class="banner-title">{{this.sightName}}</div>
+        <div class="banner-number"><span class="iconfont banner-icon">&#xe691;</span>{{this.bannerImgs.length}}</div>
       </div>
     </div>
-    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    <common-gallary :imgs="bannerImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
   </div>
 </template>
 
@@ -15,13 +15,14 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: [
-        'http://img1.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_r_800x800_25544683.jpg',
-        'http://img1.qunarzz.com/sight/p0/1412/29/b332c6de775de6b9c2ca2cafca33a963.water.jpg_r_800x800_8deed802.jpg'
-      ]
+      showGallary: false
     }
   },
   methods: {
