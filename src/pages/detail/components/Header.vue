@@ -72,13 +72,13 @@ export default {
       color:#fff
       font-size:.4rem
   .header-fixed
+    z-index:2
     position:fixed
     top:0
     left:0
     right:0
     height:$headerHeight
     line-height:$headerHeight
-    // overflow:hidden
     text-align:center
     color:#fff
     background:$bgColor
