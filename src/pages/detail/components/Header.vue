@@ -4,8 +4,7 @@
       tag="div"
       to="/"
       class="header-abs"
-      v-show="showAbs"
-    >
+      v-show="showAbs">
       <div class="iconfont header-abs-back">&#xe624;</div>
     </router-link>
     <div
@@ -14,9 +13,7 @@
       :style="opacityStyle"
     >
       <router-link to="/">
-        <div class="iconfont header-fixed-back">
-          &#xe624;
-        </div>
+        <div class="iconfont header-fixed-back">&#xe624;</div>
       </router-link>
       景点详情
     </div>
@@ -28,7 +25,7 @@ export default {
   name: 'DetailHeader',
   data () {
     return {
-      showAbs: true,
+      showAbs: false,
       opacityStyle: {
         opacity: 0
       }
@@ -47,10 +44,10 @@ export default {
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  unmounted () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
